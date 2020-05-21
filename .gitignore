@@ -1,0 +1,12 @@
+.gradle
+/build/
+**/buildOutputCleanup
+**/buildOutputCleanup
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.class
+/out/
