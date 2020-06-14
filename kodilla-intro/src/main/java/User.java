@@ -1,6 +1,6 @@
 public class User {
-    String name;
-    int age;
+    final String name;
+    final int age;
 
     public User(String name, int age) {
         this.name = name;
@@ -16,17 +16,18 @@ public class User {
         User[] users = {magda, ola, emila, daniel};
 
         int result = 0;
-        for( int i = 0; i<.......length; i++)    {
-            result = result + numbers[i]; /* nie wiem jak zmodyfikować ten kod , aby korzystał z elementów tablicy User orz w ciele pętli brał wartość pola wiek każdego użytkownika. Proszę o podpowiedź.*/
+        double average;
+        int userNumber = users.length;
+        for (User user : users) {
+            result = result + user.age;
         }
-        int average  = result / numbers.length;
+        average = result / users.length;
 
-        for ( int); { /* nie wiem jakie warunki tu wpisać. Proszę o pomoc*/
-            if( this.age < average) {
-                System.out.println(this.name) {
-                } else {
-                    System.out.println("Nobody");
-                }
+        for (User user : users) {
+            if (user.age < average) {
+                System.out.println(user.name);
+            } else {
+                System.out.println("Nobody");
             }
         }
     }
