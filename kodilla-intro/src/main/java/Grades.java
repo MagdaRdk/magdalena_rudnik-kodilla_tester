@@ -1,6 +1,6 @@
 public class Grades {
 
-    private int[] grades;
+    private int[] grades ;
     private int size;
     private int value;
 
@@ -9,11 +9,12 @@ public class Grades {
         this.size = 0;
         this.value = 0;
     }
+
     public void add(int value) {
         if (this.size == 10) {
             return;
         }
-       this.grades[this.size] = value;
+        this.grades[this.size] = value;
         this.size++;
     }
 
@@ -36,22 +37,22 @@ public class Grades {
         grades.add(3);
         grades.add(5);
         grades.add(5);
-
-
     }
-    //public int getLastGrades(){//
-
+    public int getLastGrades() {
+        int [] grades = {5,4,3,4,4,3,2,3,5,5};
+        int size = grades.length;
+        return grades[size-1];
     }
-
     public double getAverage() {
+        int [] grades = {5,4,3,4,4,3,2,3,5,5};
         int result = 0;
-        double average;
+        double average = 0;
         int gradesNumber = grades.length;
-        for (int i = 0; i <= 10; i++) {
-            result = result + gradesNumber;
+        for (int i = 0; i < grades.length; i++) {
+            result += grades[i];
         }
         average = result / grades.length;
-      }
         return average;
-
+    }
 }
+
