@@ -39,8 +39,8 @@ public class Grades {
 
 
     }
-    //public int getLastGrades(){//
-
+    public int getLastGrades(){
+        return 0;//TODO Implemet method
     }
 
     public double getAverage() {
@@ -48,10 +48,10 @@ public class Grades {
         double average;
         int gradesNumber = grades.length;
         for (int i = 0; i <= 10; i++) {
-            result = result + gradesNumber;
+            result = result + gradesNumber;//TODO Review - wrong calculation
         }
         average = result / grades.length;
-      }
-        return average;
 
+        return average;
+    }
 }
