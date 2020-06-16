@@ -45,6 +45,7 @@ public class Grades {
         return grades[size-1];
     }
 
+
     public double getAverage() {
         int [] grades = {5,4,3,4,4,3,2,3,5,5};
         int result = 0;
