@@ -38,15 +38,17 @@ public class Grades {
         grades.add(5);
         grades.add(5);
     }
+
     public int getLastGrades() {
         int [] grades = {5,4,3,4,4,3,2,3,5,5};
         int size = grades.length;
         return grades[size-1];
     }
+
     public double getAverage() {
         int [] grades = {5,4,3,4,4,3,2,3,5,5};
         int result = 0;
-        double average = 0;
+        double average;
         int gradesNumber = grades.length;
         for (int i = 0; i < grades.length; i++) {
             result += grades[i];
