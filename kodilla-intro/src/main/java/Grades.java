@@ -2,7 +2,7 @@ public class Grades {
 
     private int[] grades ;
     private int size;
-    private int value;
+    private int value;/*TODO: Review kdrzazga - variable not used*/
 
     public Grades() {
         this.grades = new int[10];
@@ -40,21 +40,21 @@ public class Grades {
     }
 
     public int getLastGrades() {
-        int [] grades = {5,4,3,4,4,3,2,3,5,5};
+        int [] grades = {5,4,3,4,4,3,2,3,5,5};/*TODO: Review kdrzazga - this declaration should be ouside this method*/
         int size = grades.length;
         return grades[size-1];
     }
 
 
     public double getAverage() {
-        int [] grades = {5,4,3,4,4,3,2,3,5,5};
+        int [] grades = {5,4,3,4,4,3,2,3,5,5};/*TODO: Review kdrzazga - this declaration should be ouside this method, too*/
         int result = 0;
         double average;
-        int gradesNumber = grades.length;
+        int gradesNumber = grades.length;/*TODO: Review kdrzazga - variable not used*/
         for (int i = 0; i < grades.length; i++) {
             result += grades[i];
         }
-        average = result / grades.length;
+        average = result / grades.length;/*TODO: Review kdrzazga - possible division by 0*/
         return average;
     }
 }
