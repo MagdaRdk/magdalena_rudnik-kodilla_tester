@@ -1,18 +1,19 @@
 package com.kodilla.abstracts.homework;
 
 public class Square extends Shape{
-    public Square() {
-        super(5);
+
+    public Square(int sideHeight) {
+        super(sideHeight);
     }
 
     @Override
     public void surfaceArea() {
-        System.out.println("Surface Area is 50");
-    }/*TODO Review kdrzazga - Pls compute real surface*/
+        System.out.println("Surface Area is " + getSideHeight()*getSideHeight());
+    }
 
     @Override
     public void circuit() {
-        System.out.println("Circuit is 45");/*TODO Review kdrzazga - Pls compute real circuit*/
+        System.out.println("Circuit is " + 4 * getSideHeight());
 
     }
 }
