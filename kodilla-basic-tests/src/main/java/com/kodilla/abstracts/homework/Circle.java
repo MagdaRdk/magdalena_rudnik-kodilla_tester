@@ -1,17 +1,19 @@
 package com.kodilla.abstracts.homework;
 
 public class Circle extends Shape {
-    public Circle() {
-        super(7);
+
+
+    public Circle(int sideHeight) {
+        super(sideHeight);
     }
 
     @Override
     public void surfaceArea() {
-        System.out.println("Surface Area is 65");
-    }/*TODO Review kdrzazga - Pls compute real surface*/
+        System.out.println("Surface Area is " + 3.14 * getSideHeight()*getSideHeight());
+    }
 
     @Override
     public void circuit() {
-        System.out.println("Circuit is 61");
-    }/*TODO Review kdrzazga - Pls compute real circuit*/
+        System.out.println("Circuit is " + 2*3.14*getSideHeight());
+    }
 }

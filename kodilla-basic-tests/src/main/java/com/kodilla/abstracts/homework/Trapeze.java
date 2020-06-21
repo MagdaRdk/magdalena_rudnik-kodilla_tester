@@ -1,17 +1,19 @@
 package com.kodilla.abstracts.homework;
 
 public class Trapeze extends Shape{
-    public Trapeze() {
-        super(11);
+
+
+    public Trapeze(int sideHeight) {
+        super(sideHeight);
     }
 
     @Override
     public void surfaceArea() {
-        System.out.println("Surface Area is 108");
-    }/*TODO Review kdrzazga - Pls compute real surface*/
+        System.out.println("Surface Area is " + 0.5*getSideHeight()*getSideHeight());
+    }
 
     @Override
     public void circuit() {
-        System.out.println("Circuit is 105");
-    }/*TODO Review kdrzazga - Pls compute real circuit*/
+        System.out.println("Circuit is " + 4*getSideHeight());
+    }
 }
