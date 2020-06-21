@@ -3,7 +3,7 @@ package com.kodilla.abstracts.homework;
 public class Person {
     private String firstName ;
     private int age;
-    private String job;
+    private String job;/*TODO Review kdrzazga - pls declare as Job, not as String*/
 
     public Person(){
         this.firstName = "Agata";

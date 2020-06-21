@@ -8,11 +8,11 @@ public class Square extends Shape{
     @Override
     public void surfaceArea() {
         System.out.println("Surface Area is 50");
-    }
+    }/*TODO Review kdrzazga - Pls compute real surface*/
 
     @Override
     public void circuit() {
-        System.out.println("Circuit is 45");
+        System.out.println("Circuit is 45");/*TODO Review kdrzazga - Pls compute real circuit*/
 
     }
 }

@@ -8,10 +8,10 @@ public class Trapeze extends Shape{
     @Override
     public void surfaceArea() {
         System.out.println("Surface Area is 108");
-    }
+    }/*TODO Review kdrzazga - Pls compute real surface*/
 
     @Override
     public void circuit() {
         System.out.println("Circuit is 105");
-    }
+    }/*TODO Review kdrzazga - Pls compute real circuit*/
 }
