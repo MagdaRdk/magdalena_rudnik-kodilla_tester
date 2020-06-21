@@ -1,13 +1,11 @@
 public class Grades {
 
-    private int[] grades ;
+    private int[] grades;
     private int size;
-    private int value;/*TODO: Review kdrzazga - variable not used*/
 
     public Grades() {
         this.grades = new int[10];
         this.size = 0;
-        this.value = 0;
     }
 
     public void add(int value) {
@@ -21,11 +19,6 @@ public class Grades {
     public static void main(String[] args) {
 
         Grades grades = new Grades();
-        grades.getLastGrades();
-        grades.getAverage();
-
-        System.out.println(grades.getLastGrades());
-        System.out.println(grades.getAverage());
 
         grades.add(5);
         grades.add(4);
@@ -37,25 +30,28 @@ public class Grades {
         grades.add(3);
         grades.add(5);
         grades.add(5);
+
+        System.out.println(grades.getLastGrade());
+        System.out.println(grades.getAverage());
+
     }
 
-    public int getLastGrades() {
-        int [] grades = {5,4,3,4,4,3,2,3,5,5};/*TODO: Review kdrzazga - this declaration should be ouside this method*/
-        int size = grades.length;
-        return grades[size-1];
+    public int getLastGrade() {
+        if (this.size == 0) {
+            return 0;
+        }
+        return this.grades[this.size - 1];
     }
-
 
     public double getAverage() {
-        int [] grades = {5,4,3,4,4,3,2,3,5,5};/*TODO: Review kdrzazga - this declaration should be ouside this method, too*/
-        int result = 0;
-        double average;
-        int gradesNumber = grades.length;/*TODO: Review kdrzazga - variable not used*/
-        for (int i = 0; i < grades.length; i++) {
-            result += grades[i];
+        if (this.size == 0) {
+            return 0;
         }
-        average = result / grades.length;/*TODO: Review kdrzazga - possible division by 0*/
-        return average;
+        double sum = 0;
+        for (int i = 0; i < this.size; i++) {
+            sum = sum + this.grades[i];
+        }
+        return sum / this.size;
     }
 }
 
