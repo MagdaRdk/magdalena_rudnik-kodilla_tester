@@ -1,7 +1,8 @@
 package com.kodilla.abstracts.homework;
 
 public class Trapeze extends Shape{
-
+    /*TODO Review: pls use bases here (PL: podstawa)
+    *  topBase and bottomBase */
 
     public Trapeze(int sideHeight) {
         super(sideHeight);
