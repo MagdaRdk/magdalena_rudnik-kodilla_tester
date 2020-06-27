@@ -13,6 +13,7 @@ public class CarsListApplication {
         List<Car> cars = new ArrayList<>();
         Opel opel = new Opel(75.0);
         cars.add(opel);
+
         cars.add(new Opel(75.0));
         cars.add(new Kia(82.0));
         cars.add(new Ford(55.0));
