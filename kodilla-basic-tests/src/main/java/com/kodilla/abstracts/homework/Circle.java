@@ -9,11 +9,11 @@ public class Circle extends Shape {
 
     @Override
     public void surfaceArea() {
-        System.out.println("Surface Area is " + 3.14 * getSideHeight()*getSideHeight());/*TODO Review pls use Math.PI for better precision*/
+        System.out.println("Surface Area is " + Math.PI * getSideHeight()*getSideHeight());
     }
 
     @Override
     public void circuit() {
-        System.out.println("Circuit is " + 2*3.14*getSideHeight());/*TODO Review pls use Math.PI for better precision*/
+        System.out.println("Circuit is " + 2* Math.PI *getSideHeight());
     }
 }

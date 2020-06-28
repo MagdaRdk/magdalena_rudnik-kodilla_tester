@@ -20,4 +20,11 @@ public class Ford implements Car{
     public double decreaseSpeed() {
         return speedF - 10;
     }
+
+    @Override
+    public String toString() {
+        return "Ford{" +
+                "speedF=" + speedF +
+                '}';
+    }
 }

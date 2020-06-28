@@ -20,4 +20,11 @@ public class Kia implements Car {
     public double decreaseSpeed() {
         return speedK - 15;
     }
+
+    @Override
+    public String toString() {
+        return "Kia{" +
+                "speedK=" + speedK +
+                '}';
+    }
 }
