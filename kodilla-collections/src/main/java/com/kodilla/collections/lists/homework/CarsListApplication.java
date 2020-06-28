@@ -19,13 +19,13 @@ public class CarsListApplication {
         cars.add(new Ford(55.0));
 
         for (Car car : cars)
-            System.out.println(car);
+            System.out.println(car);/*TODO Review kdrzazga - Pls use describeCar() here*/
 
       cars.remove(3);
       cars.remove(opel);
 
         for (Car car : cars)
-            System.out.println(car);
+            System.out.println(car);/*TODO Review kdrzazga - Pls use describeCar() here*/
 
         System.out.println(cars.size());
 
