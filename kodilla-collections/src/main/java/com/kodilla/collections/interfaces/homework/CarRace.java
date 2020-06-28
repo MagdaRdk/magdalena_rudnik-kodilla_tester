@@ -15,6 +15,8 @@ public class CarRace {
     private static void doRace(Car car) {
         System.out.println(car.increaseSpeed());
         System.out.println(car.decreaseSpeed());
+        /*TODO kdrzazga - Please correct accoring to excercise:
+        *  Metodę doRace(Car car), która na przekazanym samochodzie wywoła trzykrotnie metodę increaseSpeed() oraz dwukrotnie metodę decreaseSpeed()*/
         System.out.println(car.getSpeed());
 
     }
