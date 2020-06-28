@@ -1,5 +1,5 @@
 .gradle
-/build/
+*/build/*
 **/buildOutputCleanup
 **/buildOutputCleanup
 
@@ -9,4 +9,7 @@
 *.iml
 *.ipr
 *.class
+*.jar
+*.log
+*MANIFEST*
 /out/
