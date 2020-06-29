@@ -10,7 +10,7 @@ public class Application {
         circle.circuit();
         circle.surfaceArea();
 
-        Trapeze trapeze = new Trapeze(11);
+        Trapeze trapeze = new Trapeze(11, 15, 20);
         trapeze.circuit();
         trapeze.surfaceArea();
     }
