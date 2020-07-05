@@ -12,27 +12,25 @@ class FlightFinderTestSuite {
     public void testFindFlightsFrom() {
         // given
         FlightFinder flightFinder = new FlightFinder();
-
         // when
         List<Flight> flightsW = flightFinder.findFlightsFrom("Warsaw");
         // then
         assertEquals(2, flightsW.size());
         for (Flight f : flightsW) {
             assertEquals("Warsaw", f.getDeparture());
-
         }
-
     }
 
     @Test
     public void testFindFlightsTo() {
         //given
         FlightFinder flightFinder = new FlightFinder();
-
         // when
-
+        List<Flight> flightsM = flightFinder.findFlightsTo("Madrid");
         // then
-        fail("not implemented");
+        assertEquals(2, flightsM.size());
+        for (Flight fl : flightsM) {
+            assertEquals("Madrid", fl.getArrival());
+        }
     }
-
 }
