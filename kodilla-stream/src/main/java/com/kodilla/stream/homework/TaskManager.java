@@ -10,6 +10,8 @@ public class TaskManager {
         List<LocalDate> deadlines = TaskRepository.getTask()
                 .stream()
                 .filter(k -> k.getOpened().equals(LocalDate.now()))
+                /* TODO: utworzona zostanie lista List<LocalDate> zawierająca daty deadline wszystkich zadań, których data deadline jeszcze nie upłynęła.
+                *   You filtered only tasks that were opened now*/
                 .map(k -> k.getDeadline())
                 .collect(Collectors.toList());
         System.out.println(deadlines);
