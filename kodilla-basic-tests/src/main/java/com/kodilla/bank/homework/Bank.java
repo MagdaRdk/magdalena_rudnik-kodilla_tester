@@ -2,6 +2,8 @@ package com.kodilla.bank.homework;
 
 public class Bank {
     private String name;
+    /*TODO Review: Excercise says:  Utwórz klasę Bank, która będzie zawierać tablicę bankomatów.
+    * ARRAY of CashMachines, not several separate CashMachines :)*/
     private CashMachine first;
     private CashMachine second;
     private  CashMachine third;
@@ -62,6 +64,7 @@ public class Bank {
     }
 
     public double getTotalSum() {
+        /*TODO: Review Once the class contains array of CashMachines, use a loop here, similar to CashMachine::getSum*/
         double sumTot = this.first.getSum() + this.second.getSum() + this.third.getSum()+this.first.getSum()+this.second.getSum()+this.third.getSum();
         return sumTot;
     }
