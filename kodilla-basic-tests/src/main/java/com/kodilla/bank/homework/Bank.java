@@ -5,18 +5,18 @@ public class Bank {
     private int[] cashMachines;
     private int[] payments;
     private int[] payoff;
-    private int size;
+    private int size;//TODO Review field not used
 
     public Bank() {
         this.name = "CashMachine";
         this.cashMachines = new int[5];
-        this.payments = new int[5];
-        this.payoff = new int[5];
+        this.payments = new int[5];/*//TODO Review Already in cashMachine*/
+        this.payoff = new int[5];/*//TODO Review Already in cashMachine*/
         this.size = 0;
     }
 
     public double getTotalSum() {
-        if (this.cashMachines.length == 0) {
+        if (this.cashMachines.length == 0) {//TODO Review not needed
             return 0;
         }
         double sum = 0;
