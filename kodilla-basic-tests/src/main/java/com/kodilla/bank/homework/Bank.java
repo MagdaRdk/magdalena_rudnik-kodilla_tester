@@ -2,73 +2,50 @@ package com.kodilla.bank.homework;
 
 public class Bank {
     private String name;
-    /*TODO Review: Excercise says:  Utwórz klasę Bank, która będzie zawierać tablicę bankomatów.
-    * ARRAY of CashMachines, not several separate CashMachines :)*/
-    private CashMachine first;
-    private CashMachine second;
-    private  CashMachine third;
+    private int[] cashMachines;
+    private int[] payments;
+    private int[] payoff;
+    private int size;
 
-    public Bank(String name) {
-        this.name = name;
-        this.first = new CashMachine();
-        this.second = new CashMachine();
-        this.third = new CashMachine();
-    }
-    public void addCashMachineFirst (int payment) {
-        if (payment > 0 && payment < 1000) {
-            this.first.add(payment);
-        }
-    }
-    public void addCashMachineSecond (int payment) {
-        if (payment > 0 && payment < 1000) {
-            this.second.add(payment);
-        }
-    }
-    public void addCashMachineThird (int payment) {
-        if (payment > 0 && payment < 1000) {
-            this.third.add(payment);
-        }
-    }
-    public void addCashMachineFirstM (int payoff) {
-        if (payoff < 0 && payoff > -1000) {
-            this.first.add(payoff);
-        }
-    }
-    public void addCashMachineSecondM (int payoff) {
-        if (payoff < 0 && payoff > -1000) {
-            this.second.add(payoff);
-        }
-    }
-    public void addCashMachineThirdM (int payoff) {
-        if (payoff < 0 && payoff > -1000) {
-            this.third.add(payoff);
-        }
-    }
-    public double getFirstSum () {
-        return this.first.getSum();
-    }
-    public double getSecondSum() {
-        return this.second.getSum();
-    }
-    public double getThirdSum() {
-        return this.third.getSum();
-    }
-    public double getFirstSumM () {
-        return this.first.getSum();
-    }
-    public double getSecondSumM() {
-        return this.second.getSum();
-    }
-    public double getThirdSumM() {
-        return this.third.getSum();
+    public Bank() {
+        this.name = "CashMachine";
+        this.cashMachines = new int[5];
+        this.payments = new int[5];
+        this.payoff = new int[5];
+        this.size = 0;
     }
 
     public double getTotalSum() {
-        /*TODO: Review Once the class contains array of CashMachines, use a loop here, similar to CashMachine::getSum*/
-        double sumTot = this.first.getSum() + this.second.getSum() + this.third.getSum()+this.first.getSum()+this.second.getSum()+this.third.getSum();
-        return sumTot;
+        if (this.cashMachines.length == 0) {
+            return 0;
+        }
+        double sum = 0;
+        for (int i = 0; i < this.cashMachines.length; i++) {
+            sum += this.cashMachines[i];
+        }
+        return sum;
     }
+    public int[] getPayments() {
+        return payments;
     }
+    public int[] getPayoff() {
+        return payoff;
+    }
+    public double getAveragePayments() {
+        double sum = 0;
+        for(int i = 0; i < this.payments.length; i++) {
+            sum += this.payments[i];
+        }
+        return sum/this.payments.length;
+    }
+    public double getAveragePayoff() {
+        double sum = 0;
+        for (int i = 0; i < this.payoff.length; i++) {
+            sum += this.payoff[i];
+        }
+        return sum / this.payoff.length;
+    }
+}
 
 
 
