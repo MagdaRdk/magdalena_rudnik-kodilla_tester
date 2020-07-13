@@ -2,48 +2,60 @@ package com.kodilla.bank.homework;
 
 public class Bank {
     private String name;
-    private int[] cashMachines;
-    private int[] payments;
-    private int[] payoff;
-    private int size;//TODO Review field not used
+    private CashMachine[] cashMachines;
 
     public Bank() {
         this.name = "CashMachine";
-        this.cashMachines = new int[5];
-        this.payments = new int[5];/*//TODO Review Already in cashMachine*/
-        this.payoff = new int[5];/*//TODO Review Already in cashMachine*/
-        this.size = 0;
+        this.cashMachines = new CashMachine[5];
+        for (int i = 0; i < cashMachines.length; i++)
+            cashMachines[i] = new CashMachine();
+    }
+
+    public CashMachine[] getCashMachines() {
+        return cashMachines;
     }
 
     public double getTotalSum() {
-        if (this.cashMachines.length == 0) {//TODO Review not needed
-            return 0;
-        }
         double sum = 0;
-        for (int i = 0; i < this.cashMachines.length; i++) {
-            sum += this.cashMachines[i];
+        for (CashMachine cashMachine : this.cashMachines) {
+            for (int a = 0; a < cashMachine.getPayments().length; a++)
+                sum += cashMachine.getPayments()[a];
         }
         return sum;
     }
-    public int[] getPayments() {
-        return payments;
+
+    public int getPayments() {
+        int amount = 0;
+        for (CashMachine c : this.cashMachines) {
+            for (int p : c.getPayments()) {
+                if (p > 0) {
+                    amount = amount + 1;
+                }
+            }
+        }
+        return amount;
     }
-    public int[] getPayoff() {
-        return payoff;
+
+    public int getPayoff() {
+        return 0;//TODO
     }
+
     public double getAveragePayments() {
-        double sum = 0;
-        for(int i = 0; i < this.payments.length; i++) {
-            sum += this.payments[i];
+        if (getPayments() == 0) {
+            return 0;
         }
-        return sum/this.payments.length;
+        double sum = 0;
+        for (CashMachine c : this.cashMachines) {
+            for (int p : c.getPayments()) {
+                sum += p;
+            }
+
+        }
+        return sum / getPayments();
     }
+
     public double getAveragePayoff() {
-        double sum = 0;
-        for (int i = 0; i < this.payoff.length; i++) {
-            sum += this.payoff[i];
-        }
-        return sum / this.payoff.length;
+        return 0;//TODO
     }
 }
 
