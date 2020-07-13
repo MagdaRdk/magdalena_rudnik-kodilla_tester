@@ -37,7 +37,15 @@ public class Bank {
     }
 
     public int getPayoff() {
-        return 0;//TODO
+        int amount1 = 0;
+        for (CashMachine c : this.cashMachines) {
+            for (int p : c.getPayments()) {
+                if (p < 0) {
+                    amount1 = amount1 + 1;
+                }
+            }
+        }
+        return amount1;
     }
 
     public double getAveragePayments() {
@@ -55,7 +63,17 @@ public class Bank {
     }
 
     public double getAveragePayoff() {
-        return 0;//TODO
+        if (getPayoff() == 0) {
+            return 0;
+        }
+        double sub = 0;
+        for (CashMachine c : this.cashMachines) {
+            for (int p : c.getPayments()) {
+                sub += p;
+            }
+
+        }
+        return sub / getPayments();
     }
 }
 

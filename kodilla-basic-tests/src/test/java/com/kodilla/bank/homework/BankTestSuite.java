@@ -16,7 +16,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldHaveZeroLengthPayoff() {
-        Assertions.fail("not implemented");
         Bank bank = new Bank();
         int payoff = bank.getPayoff();
         Assertions.assertEquals(0, payoff);
