@@ -5,13 +5,14 @@ import java.util.List;
 
 public class WarehouseApp {
     public static void main(String[] args) {
-        List<Order> orders = new ArrayList<>();
-        orders.add(new Order("101"));
-        orders.add(new Order("102"));
-        orders.add(new Order("103"));
-        orders.add(new Order("105"));
+        Warehouse warehouse = new Warehouse();
+        var order1 = new Order("101");
+        var order2 = new Order("102");
+        var order3 = new Order("103");
+        var order4 = new Order("105");
 
-        /* //dobrze rozumiem, że tu ma pojawić się blok try,catch?
+        warehouse.addOrder(order1); //TODO Review add all orders
+        /* //dobrze rozumiem, że tu ma pojawić się blok try,catch? -> Teraz TAK :)*/
 
-         }
+    }
 }

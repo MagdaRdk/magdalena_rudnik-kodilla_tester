@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Warehouse {
-    private List<Order> addOrder(Order order) {
-        List<Order> orders = new ArrayList<>();
-        return orders;
+
+    private List<Order> orders = new ArrayList<>();
+
+    public void addOrder(Order order) {
+        this.orders.add(order);
     }
 
   /* public Order getOrder(String number) throws OrderDoesntExistException {
