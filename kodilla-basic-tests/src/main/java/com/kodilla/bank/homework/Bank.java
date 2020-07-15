@@ -54,10 +54,11 @@ public class Bank {
         }
         double sum = 0;
         for (CashMachine c : this.cashMachines) {
-            for (int p : c.getPayments()) { //TODO: Review: missing condition if(p >0)
-                sum += p;
+            for (int p : c.getPayments()) {
+                if (p > 0) {
+                    sum += p;
+                }
             }
-
         }
         return sum / getPayments();
     }
@@ -68,14 +69,16 @@ public class Bank {
         }
         double sub = 0;
         for (CashMachine c : this.cashMachines) {
-            for (int p : c.getPayments()) {//TODO: Review: missing condition if(p <0)
-                sub += p;
+            for (int p : c.getPayments()) {
+                if (p < 0) {
+                    sub += p;
+                }
             }
-
         }
-        return sub / getPayments();//TODO Review getPayoff() here
+        return sub / getPayoff();
     }
 }
+
 
 
 
