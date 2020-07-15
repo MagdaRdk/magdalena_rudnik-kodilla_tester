@@ -13,14 +13,13 @@ public class Warehouse {
         this.orders.add(order);
     }
 
-  /* public Order getOrder(String number) throws OrderDoesntExistException {
-       List<Order> orders = new Order()
-               .stream()
-               .map(k -> getOrder(number));
+   public Order getOrder(String number) throws OrderDoesntExistException {
+       this.orders.stream()
+               .map(k -> k.getNumber());
        System.out.println(orders);
 
         throw new OrderDoesntExistException();
 
-    } */ //podpowiesz co ja robię tu źle. Nie mogę ruszyć dalej.
+    }
 
 }

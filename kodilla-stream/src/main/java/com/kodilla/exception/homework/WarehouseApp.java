@@ -11,8 +11,19 @@ public class WarehouseApp {
         var order3 = new Order("103");
         var order4 = new Order("105");
 
-        warehouse.addOrder(order1); //TODO Review add all orders
-        /* //dobrze rozumiem, że tu ma pojawić się blok try,catch? -> Teraz TAK :)*/
+        warehouse.addOrder(order1);
+        warehouse.addOrder(order2);
+        warehouse.addOrder(order3);
+        warehouse.addOrder(order4);
 
+        try {
+            Order isOrderNumberExist = warehouse.getOrder("104");
+            System.out.println("Order" + isOrderNumberExist);
+        } catch (OrderDoesntExistException e) {
+            System.out.println("Sorry, this order does not exist.");
+        } finally {
+            System.out.println("Thank you for using our system");
+        }
     }
 }
+
