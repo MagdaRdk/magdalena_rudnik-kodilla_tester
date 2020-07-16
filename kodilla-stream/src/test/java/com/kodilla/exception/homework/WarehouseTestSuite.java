@@ -14,7 +14,5 @@ public class WarehouseTestSuite {
         Order isOrderNumberExist = warehouse.getOrder("103");
         // then
         assertNotNull(isOrderNumberExist);
-
     }
-
 }
