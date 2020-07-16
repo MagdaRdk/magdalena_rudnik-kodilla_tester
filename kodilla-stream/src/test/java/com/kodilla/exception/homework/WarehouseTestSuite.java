@@ -12,7 +12,8 @@ public class WarehouseTestSuite {
         // when
        Order isOrderNumberExist = warehouse.getOrder("103");
         // then
-       assertNull(isOrderNumberExist); //why the test is failed?
+       assertNull(isOrderNumberExist); //why the test is failed? -> because Java compiler doesn´t even reach this line, Execution stops when Exception is thrown in getOrder
+       //TODO Review -> remove this test, testGetOrder_withException() does the job
 
     }
 
