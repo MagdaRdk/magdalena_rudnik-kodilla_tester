@@ -15,7 +15,7 @@ public class Warehouse {
 
    public Order getOrder(String number) throws OrderDoesntExistException {
        this.orders.stream()
-               .map(k -> k.getNumber());
+               .map(k -> k.getNumber());/*TODO Review use .filter here*/
        System.out.println(orders);
 
         throw new OrderDoesntExistException();
