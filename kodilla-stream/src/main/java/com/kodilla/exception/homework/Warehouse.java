@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Warehouse {
 
@@ -13,13 +14,23 @@ public class Warehouse {
         this.orders.add(order);
     }
 
-   public Order getOrder(String number) throws OrderDoesntExistException {
-       this.orders.stream()
-               .map(k -> k.getNumber());/*TODO Review use .filter here*/
-       System.out.println(orders);
+    public Order getOrder(String number) throws OrderDoesntExistException {
+        var order = this.orders.stream()
+                .filter(o -> number.equals(o.getNumber()))
+                .collect(Collectors.toList());
+        if (order.isEmpty())
+            throw new OrderDoesntExistException();
+        return order.get(0);
 
-        throw new OrderDoesntExistException();
+    }
 
+    public Order getOrder2(String number) throws OrderDoesntExistException {
+        var order = this.orders.stream()
+                .filter(o -> number.equals(o.getNumber()))
+                .findAny();
+        if (order.isEmpty())
+            throw new OrderDoesntExistException();
+        return order.get();
     }
 
 }

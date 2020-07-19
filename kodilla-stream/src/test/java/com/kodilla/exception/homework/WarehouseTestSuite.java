@@ -11,8 +11,8 @@ public class WarehouseTestSuite {
         // given
         Warehouse warehouse = new Warehouse();
         // when
-        Order isOrderNumberExist = warehouse.getOrder("103");
-        // then
-        assertNotNull(isOrderNumberExist);
+        warehouse.getOrder("103");
+
     }
+    //TODO
 }
