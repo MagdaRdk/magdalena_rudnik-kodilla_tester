@@ -13,6 +13,7 @@ public class GamblingMachine {
             if (computerNumbers.contains(number)) {
                 count++;
             }
+
         }
         return count;
     }
