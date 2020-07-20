@@ -24,9 +24,6 @@ class ShopTestSuite {
     }
 
 
-
-
-
     @BeforeEach
     public void initializeShop() {
         shop.addOrder(chair);

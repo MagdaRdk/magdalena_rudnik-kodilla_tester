@@ -11,14 +11,14 @@ public class Shop {
         this.orders.add(order);
     }
 
-   /* public Order getOrder(LocalDate date) {
-        if (date.isBefore(date))
+    public Order getOrder(LocalDate date) {
+        if (date.isAfter(LocalDate.of(2018,7,20)))
             return this.orders.get(); //jak wpisać zakres tych dwóch lat?
-    }*/
+    }
 
-    /*public Order getOrderFromScope(double scope) {
-        if /// jak największy i najmniejszy zapisać
-    }*/
+    public Order getOrderFromScope(double scope) {
+        if // jak największy i najmniejszy zapisać
+    }
 
     public int getSize() {
         return this.orders.size();
