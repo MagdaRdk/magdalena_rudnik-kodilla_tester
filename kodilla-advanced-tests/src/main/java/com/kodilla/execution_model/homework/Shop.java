@@ -13,11 +13,12 @@ public class Shop {
 
     public Order getOrder(LocalDate date) {
         if (date.isAfter(LocalDate.of(2018,7,20)))
-            return this.orders.get(); //jak wpisać zakres tych dwóch lat?
+            return this.orders.get(); //jak wpisać zakres tych dwóch lat? -> TODO if (date.isAfter(LocalDate.of(2018,7,20)) && date.isBefore(LocalDate.of ....)
     }
 
     public Order getOrderFromScope(double scope) {
-        if // jak największy i najmniejszy zapisać
+        if // jak największy i najmniejszy zapisać -> TODO public List<Order> getOrders(double priceFrom, double priceTo)
+        //and you follow the list and filter the proper Orders
     }
 
     public int getSize() {

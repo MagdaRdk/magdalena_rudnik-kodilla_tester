@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class PersonSources {
     static Stream<Arguments> provideIntegerForTestingBMI() {
         return Stream.of(
-                Arguments.of(1.6, 50),
+                Arguments.of(1.6, 50),//TODO: Better use like: Arguments.of("Overweight", new Person(1.80,90.0).getBMI()),
                 Arguments.of(1.8, 78),
                 Arguments.of(1.68, 70),
                 Arguments.of(1.7, 54),
