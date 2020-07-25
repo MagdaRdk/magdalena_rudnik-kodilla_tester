@@ -4,6 +4,7 @@ import com.kodilla.execution_model.Item;
 import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,9 +13,9 @@ class ShopTestSuite {
     Shop shop = new Shop();
 
     Order chair = new Order("jonny", 450, LocalDate.of(2020, 6, 22));
-    Order table = new Order("Maggir", 1119.20, LocalDate.of(2020,7,21));
+    Order table = new Order("Maggir", 1120, LocalDate.of(2020,7,21));
     Order couch = new Order("Javier" , 2500, LocalDate.of(2019,2,21));
-    Order wardrobe = new Order("Ola", 1909.99, LocalDate.of(2020,4,12));
+    Order wardrobe = new Order("Ola", 1910, LocalDate.of(2020,4,12));
 
     @Test
     public void shouldAddOrderToShop() {
@@ -24,6 +25,13 @@ class ShopTestSuite {
         assertEquals(4, numberOfOrders);
     }
 
+    @Test
+    public void shouldCalculateSum() {
+        // When
+        List<Order> sum = shop.sumAll();
+        // Then
+        assertEquals(5980, sum);
+    }
 
     @BeforeEach
     public void initializeShop() {
