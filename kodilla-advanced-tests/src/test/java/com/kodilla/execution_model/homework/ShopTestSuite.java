@@ -1,5 +1,6 @@
 package com.kodilla.execution_model.homework;
 
+import com.kodilla.execution_model.Item;
 import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;

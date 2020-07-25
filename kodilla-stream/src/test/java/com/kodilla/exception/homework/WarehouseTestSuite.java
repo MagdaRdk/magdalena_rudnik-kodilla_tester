@@ -14,5 +14,4 @@ public class WarehouseTestSuite {
         warehouse.getOrder("103");
 
     }
-    //TODO
 }
