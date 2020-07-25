@@ -1,23 +1,3 @@
-DROP TABLE IF EXISTS ISSUESLISTS;
-CREATE TABLE ISSUESLISTS
-(
-ID SERIAL PRIMARY KEY,
-NAME VARCHAR(100)
-);
-SELECT * FROM issueslists;
-
-INSERT INTO issueslists (NAME)
-VALUES ("To Do");
-
-INSERT INTO issueslists (NAME)
-VALUES ("In progress");
-
-INSERT INTO issueslists (NAME)
-VALUES ("Done");
-
-COMMIT;
-SELECT * FROM issueslists;
-
 DROP TABLE IF EXISTS ISSUES;
 CREATE TABLE ISSUES
 (
@@ -81,5 +61,3 @@ VALUES (3, "Do exercises.", "Do exercises from course.", 1);
 COMMIT;
 
 SELECT * FROM ISSUES;
-
-SELECT * FROM issueslists;
