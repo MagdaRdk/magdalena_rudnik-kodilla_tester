@@ -7,6 +7,7 @@ public class Order {
     private double value;
     private LocalDate date;
 
+
     public Order(String userName, double value, LocalDate date) {
         this.userName = userName;
         this.value = value;

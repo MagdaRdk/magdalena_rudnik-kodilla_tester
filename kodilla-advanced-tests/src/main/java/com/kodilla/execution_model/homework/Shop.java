@@ -28,12 +28,12 @@ public class Shop {
         return this.orders.size();
     }
 
-    public List<Order> sumAll() {
+    public double sumAll() {
         return this.orders.stream()
-                .filter(k -> k.getValue()) //dlaczego nie mogę odfiltrować wartości zamówienia, żeby potem zsumować?
+                .filter(k -> k.getDate().isAfter(LocalDate.of(2019, 1,1)))
                 .map(k -> k.getValue())
-                .sum()
-                .getAsDouble;
+                .mapToDouble(n -> n)
+                .sum();
 
     }
 }

@@ -28,10 +28,19 @@ class ShopTestSuite {
     @Test
     public void shouldCalculateSum() {
         // When
-        List<Order> sum = shop.sumAll();
+        double sum = shop.sumAll();
         // Then
-        assertEquals(5980, sum);
+        assertEquals(5980, shop.sumAll());
     }
+
+    @Test
+    public void shouldGetExistingOrder() {
+        // When
+        List<Order> result = shop.getOrders(400, 500);
+        // Then
+        assertEquals(1, result.size());
+    }
+
 
     @BeforeEach
     public void initializeShop() {
