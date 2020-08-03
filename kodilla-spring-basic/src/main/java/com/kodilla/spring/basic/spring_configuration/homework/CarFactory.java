@@ -9,14 +9,13 @@ import java.util.Random;
 @Configuration
 public class CarFactory {
 
-
-    @Bean
-    public Car lights() {
-        // if (LocalTime.of(20,00,00)  LocalTime.of(6,00,00)) utknęłam tu. Nie wiem jak zapisać warunek o załączonych światłach od 20 do 6. Proszę o wskazówki.
-    return null;
+   @Bean
+    public boolean lights() {
+        if (LocalTime.now().isAfter(LocalTime.of(6, 00, 00)) && LocalTime.now().isBefore(LocalTime.of(20, 00, 00))){
+            return false;
+        }
+        return true;
     }
-
-
 
     @Bean
     public Car randomCar() {

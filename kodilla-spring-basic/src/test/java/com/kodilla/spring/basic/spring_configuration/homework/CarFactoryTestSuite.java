@@ -19,11 +19,11 @@ public class CarFactoryTestSuite {
     public void shouldLightsTurnedOn() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-
+        SUV suv = context.getBean(SUV.class);
         //When
-
+        boolean lights = suv.hasHeadlightsTurnedOn();
         //Then
-
+        Assertions.assertEquals(true, lights);
     }
 
     @Test
