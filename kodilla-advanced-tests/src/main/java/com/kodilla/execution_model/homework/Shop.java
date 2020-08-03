@@ -12,9 +12,10 @@ public class Shop {
         this.orders.add(order);
     }
 
-    public List<Order> getOrderFromScope(LocalDate date) {
-        return this.orders.stream()
-                .filter(p -> p.getDate().isAfter(LocalDate.of(2019, 7, 20)) && p.getDate().isBefore(LocalDate.of(2020, 7, 20)))
+    public List<Order> getOrderFromScope(LocalDate start, LocalDate end) {
+        return this.orders
+                .stream()
+                .filter(p -> p.getDate().isAfter(start)  && p.getDate().isBefore(end))
                 .collect(Collectors.toList());
     }
 
