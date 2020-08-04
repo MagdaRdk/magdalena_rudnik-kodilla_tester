@@ -1,4 +1,4 @@
-/*package com.kodilla.parametrized_tests;
+package com.kodilla.parametrized_tests;
 
 import org.junit.jupiter.params.provider.Arguments;
 
@@ -14,4 +14,4 @@ public class StringSources {
                 Arguments.of("A", 1)
         );
     }
-}*/
+}
