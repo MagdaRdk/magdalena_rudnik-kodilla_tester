@@ -1,11 +1,26 @@
-INSERT INTO POSTS (USER_ID, BODY)
-VALUES (1, "Hello everybody");
+USE kodilla_tester;
+DROP TABLE IF EXISTS POSTS;
+
+CREATE TABLE POSTS
+(
+    ID          SERIAL PRIMARY KEY,
+    USER_ID     BIGINT UNSIGNED NOT NULL,
+    BODY        VARCHAR(1024),
+    FOREIGN KEY (USER_ID) REFERENCES USERS(ID)
+);
 
 INSERT INTO POSTS (USER_ID, BODY)
-VALUES (5, "Hello, I am Thomas");
+VALUES (1, "This is my first post on this forum!");
 
-INSERT INTO POSTS (USER_ID, BODY)
-VALUES (6, "Hi, I am John");
+COMMIT;
+
+SELECT * FROM POSTS;
+
+INSERT INTO POSTS (USER_ID, BODY) VALUES (1, "Hello everybody");
+
+INSERT INTO POSTS (USER_ID, BODY) VALUES (5, "Hello, I am Thomas");
+
+INSERT INTO POSTS (USER_ID, BODY) VALUES (6, "Hi, I am John");
 
 COMMIT;
 
