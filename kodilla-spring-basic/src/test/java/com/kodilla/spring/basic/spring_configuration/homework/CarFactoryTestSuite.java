@@ -15,7 +15,7 @@ public class CarFactoryTestSuite {
     @Test
     public void shouldLightsTurnedOn() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        ApplicationContext context = new AnnotationConfigApplicationContext(CarFactory.class);
         SUV suv = context.getBean(SUV.class);
         //When
         boolean lights = suv.hasHeadlightsTurnedOn();
@@ -27,7 +27,7 @@ public class CarFactoryTestSuite {
     public void shouldCreateRandomCar() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Car car = (Car) context.getBean("randomCar");
+        Car car = context.getBean("randomCar", Car.class);
         //When
         String type = car.getCarType();
         System.out.println(type);
