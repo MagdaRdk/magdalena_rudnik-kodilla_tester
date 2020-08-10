@@ -3,7 +3,6 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;

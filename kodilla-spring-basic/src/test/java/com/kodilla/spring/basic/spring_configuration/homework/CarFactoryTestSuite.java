@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,9 +15,8 @@ public class CarFactoryTestSuite {
 
     @Test
     public void shouldLightsTurnedOn() {
-        //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext(CarFactory.class);
-        SUV suv = context.getBean(SUV.class);
+        //Given podpowiesz jak stworzyć ten test? Gdy metoda jest podana w interfejsie Car.Jak ją sprawdzić?
+
         //When
         boolean lights = suv.hasHeadlightsTurnedOn();
         //Then
