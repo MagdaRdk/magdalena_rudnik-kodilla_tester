@@ -13,14 +13,15 @@ import java.util.List;
 @SpringBootTest
 public class CarFactoryTestSuite {
 
-    @Test
+   @Test
     public void shouldLightsTurnedOn() {
-        //Given podpowiesz jak stworzyć ten test? Gdy metoda jest podana w interfejsie Car.Jak ją sprawdzić?
-
+        //Given
+       ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+       Car car = context.getBean("hasHeadlightsTurnedOn", Car.class);
         //When
-        boolean lights = suv.hasHeadlightsTurnedOn();
+        boolean lights = car.hasHeadlightsTurnedOn();
         //Then
-        Assertions.assertEquals(true, lights);
+        Assertions.assertEquals( false, LocalTime.now()); // dlaczego test nie przechodzi? W clasie car oznaczyłąm metodę jako Bean??
     }
 
     @Test
