@@ -6,7 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,11 +16,11 @@ public class CarFactoryTestSuite {
     public void shouldLightsTurnedOn() {
         //Given
        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-       Car car = context.getBean("hasHeadlightsTurnedOn", Car.class);
+       Car car = context.getBean("randomCar", Car.class);
         //When
         boolean lights = car.hasHeadlightsTurnedOn();
         //Then
-        Assertions.assertEquals( false, LocalTime.now()); // dlaczego test nie przechodzi? W clasie car oznaczyłąm metodę jako Bean??
+        Assertions.assertTrue(lights);
     }
 
     @Test
