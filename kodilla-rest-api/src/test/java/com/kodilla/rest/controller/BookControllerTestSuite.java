@@ -2,30 +2,45 @@ package com.kodilla.rest.controller;
 
 import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
-import org.junit.jupiter.api.Test;
+import org.hamcrest.Matchers;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-
+@RunWith(SpringRunner.class)
+@WebMvcTest(BookController.class)
 class BookControllerTestSuite {
 
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private BookService bookService;
+
     @Test
-    public void shouldFetchBooks() {
+    public void shouldFetchBooks() throws Exception{
         //Given
-        BookService bookServiceMock = Mockito.mock(BookService.class);
-        BookController bookController = new BookController(bookServiceMock);
         List<BookDto> bookList = new ArrayList<>();
         bookList.add(new BookDto("Title 1", "Author 1"));
         bookList.add(new BookDto("Title 2", "Author 2"));
-        Mockito.when(bookServiceMock.getBooks()).thenReturn(bookList);
+        Mockito.when(bookService.getBooks()).thenReturn(bookList);
         //When
-        List<BookDto> result = bookController.getBooks();
         //Then
-        assertThat(result).hasSize(2);
+        mockMvc.perform(MockMvcRequestBuilders.get("/books").contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
+
     }
 
     @Test
