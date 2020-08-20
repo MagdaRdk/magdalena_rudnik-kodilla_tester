@@ -14,8 +14,8 @@ public class BookService {
         return books;
     }
 
-    public void addBook(BookDto bookDto) {
-        books.add(bookDto);
+    public boolean addBook(BookDto bookDto) {
+        return books.add(bookDto);
     }
 
     public void removeBook(BookDto bookDto) {
