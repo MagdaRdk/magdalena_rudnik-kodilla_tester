@@ -51,18 +51,17 @@ public class WeatherServiceTestSuite {
         Client secondClient = Mockito.mock(Client.class);
         weatherService.addSubscriber(location, client);
         weatherService.sendNotification(notification);
-        Mockito.verify(secondClient, Mockito.times(1)).receive(notification);
+        Mockito.verify(secondClient, Mockito.never()).receive(notification);
         Mockito.verify(client, Mockito.times(1)).receive(notification);
     }
 
    @Test
     public void shouldDeletingGivenLocation() {
-       Location location2 = Mockito.mock(Location.class);
-       weatherService.addSubscriber(location, client);
-       weatherService.removeLocation(location);
+       Location locationToBeDeleted = Mockito.mock(Location.class);
+       weatherService.addSubscriber(locationToBeDeleted, client);
+       weatherService.removeLocation(locationToBeDeleted);
        weatherService.sendNotification(notification);
-       Mockito.verify(location2,Mockito.never());
-       Mockito.verify(location,Mockito.times(0));
+       Mockito.verify(client,Mockito.never()).receive(notification);
 
     }
 }
