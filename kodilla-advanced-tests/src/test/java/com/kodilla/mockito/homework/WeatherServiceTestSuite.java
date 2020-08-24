@@ -20,7 +20,6 @@ public class WeatherServiceTestSuite {
         Mockito.verify(client,Mockito.times(1)).receive(notification);
     }
 
-
     @Test
     public void unsubscribeFromYourLocation() {
         weatherService.addSubscriber(location, client);
@@ -62,6 +61,5 @@ public class WeatherServiceTestSuite {
        weatherService.removeLocation(locationToBeDeleted);
        weatherService.sendNotification(notification);
        Mockito.verify(client,Mockito.never()).receive(notification);
-
     }
 }

@@ -36,7 +36,6 @@ public class WeatherService {
         locationClientsMap.put(loc, new HashSet<>());
     }
 
-
     public void removeSubscription(Client cl) {
         for (Map.Entry<Location, Set<Client>> locks : locationClientsMap.entrySet()) {
             if (locks.getValue().contains(cl))
