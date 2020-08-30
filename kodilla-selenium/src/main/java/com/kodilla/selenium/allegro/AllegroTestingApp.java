@@ -1,9 +1,6 @@
 package com.kodilla.selenium.allegro;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -13,18 +10,24 @@ public class AllegroTestingApp {
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl");
 
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
+        try {
 
-        WebElement category = driver.findElement(By.xpath("//*[@novalidate action=\"/listing\"]/div/div/select/optgroup"));
-        Select categorySelect = new Select(category);
-        categorySelect.selectByIndex(3);
+            WebElement closeConsent = driver.findElement(By.xpath("//div[@class='_1yyhi']/div/button"));
+            closeConsent.click();
 
-        WebElement inputField = driver.findElement(By.xpath("//*[@novalidate action=\"/listing\"]/input"));
-        inputField.sendKeys("mavic mini");
 
-        WebElement inputField2 = driver.findElement(By.xpath("//*[@type=\"/submit\""));
-        inputField2.click();
+            WebElement category = driver.findElement(By.xpath("//optgroup[@label='Kategorie']/option[3]"));
+            category.click();
+
+            WebElement inputField = driver.findElement(By.name("string"));
+            inputField.sendKeys("mavic mini");
+
+            WebElement inputField2 = driver.findElement(By.xpath("//form/button[text()='szukaj']"));
+            inputField2.click();
+        }
+        catch (NoSuchElementException e) {
+            System.err.println(e);
+        }
 
     }
 }
