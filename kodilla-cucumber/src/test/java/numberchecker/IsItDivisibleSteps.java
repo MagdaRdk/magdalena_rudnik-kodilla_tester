@@ -1,9 +1,7 @@
 package numberchecker;
 
 import io.cucumber.java8.En;
-import numberchecker.NumberChecker;
 import org.junit.Assert;
-
 
 public class IsItDivisibleSteps implements En {
 
@@ -11,10 +9,10 @@ public class IsItDivisibleSteps implements En {
     private String answer;
 
     public IsItDivisibleSteps() {
-        Given("number is 30", () -> {
-            this.number = 30;
+        Given("^number is (.*)$",  (String number) -> {
+            this.number = Integer.valueOf(number);
         });
-
+/*TODO
         Given("number is 10", () -> {
             this.number = 10;
         });
@@ -26,7 +24,7 @@ public class IsItDivisibleSteps implements En {
         Given("number is 7", () -> {
             this.number = 7;
         });
-
+*/
         When("I ask number is divisible", () -> {
             NumberChecker numberChecker = new NumberChecker();
             this.answer = numberChecker.checkIfDivisible(this.number);
@@ -36,6 +34,7 @@ public class IsItDivisibleSteps implements En {
         Then("I should be told {string}", (String string) -> {
             Assert.assertEquals(string, this.answer);
         });
+
 
     }
 }
