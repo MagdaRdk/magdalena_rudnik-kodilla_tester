@@ -13,18 +13,6 @@ public class IsItDivisibleSteps implements En {
             this.number = Integer.valueOf(number);
         });
 
-        Given("^number is (.*)$", (String number) -> {
-            this.number = Integer.valueOf(number);
-        });
-
-        Given("number is (.*)$", (String number) -> {
-            this.number = Integer.valueOf(number);
-        });
-
-        Given("number is (.*)$", (String number) -> {
-            this.number = Integer.valueOf(number);
-        });
-
         When("I ask number is divisible", () -> {
             NumberChecker numberChecker = new NumberChecker();
             this.answer = numberChecker.checkIfDivisible(this.number);

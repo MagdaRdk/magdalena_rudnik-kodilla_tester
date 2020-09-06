@@ -21,7 +21,7 @@ public class IsItSummerSteps implements En {
 
         });
 
-        Then("I should be told {string}", (String string) -> {
+        Then("Answer should be {string}", (String string) -> {
             Assert.assertEquals(string, this.answer);
         });
 
