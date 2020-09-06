@@ -32,7 +32,7 @@ public class AllegroTestingApp2 {
 
             List<WebElement> productionCard = driver.findElements(By.cssSelector("._9c44d_378hD > section > article"));
 
-            productionCard.get().getText(); //poproszę o wskazówki
+
 
         } catch (NoSuchElementException e) {
             System.err.println(e);
