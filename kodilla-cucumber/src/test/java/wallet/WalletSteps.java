@@ -26,5 +26,46 @@ public class WalletSteps implements En {
         Then("the balance of my wallet should be $170", () -> {
             Assert.assertEquals("Incorrect wallet balance", 170 , wallet.getBalance());
         });
+
+        When("I request $200", () -> {
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, 200);
+        });
+
+        Then("$200 should be dispensed", () -> {
+            Assert.assertEquals(200, cashSlot.getContents());
+        });
+
+        Then("the balance of my wallet should be $0", () -> {
+            Assert.assertEquals("Incorrect wallet balance", 0 , wallet.getBalance());
+        });
+
+        When("I request $201", () -> {
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, 201);
+        });
+
+        Then("Should report error", () -> {
+            Assert.assertEquals(200, cashSlot.getContents()); // jak zapisać, że nie może wypłacić więcje niż 200?
+        });
+
+        Then("the balance of my wallet should be $200", () -> {
+            Assert.assertEquals("Incorrect wallet balance", 200 , wallet.getBalance());
+        });
+
+        When("I request $0", () -> {
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, 0);
+        });
+
+        Then("Should report error", () -> { //podpowiesz co dalej?
+
+        });
+
+        Then("the balance of my wallet should be $200", () -> {
+
+        });
+
+
     }
 }

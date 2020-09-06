@@ -12,7 +12,7 @@ Feature: Cash Withdrawal
     Then $200 should be dispensed
     And the balance of my wallet should be $0
 
-  Scenario: Unsuccessful withdrawal all cash
+  Scenario: Unsuccessful withdrawal more cash
     Given I have deposited $200 in my wallet
     When I request $201
     Then Should report error
