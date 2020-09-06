@@ -12,19 +12,19 @@ public class IsItDivisibleSteps implements En {
         Given("^number is (.*)$",  (String number) -> {
             this.number = Integer.valueOf(number);
         });
-/*TODO
-        Given("number is 10", () -> {
-            this.number = 10;
+
+        Given("^number is (.*)$", (String number) -> {
+            this.number = Integer.valueOf(number);
         });
 
-        Given("number is 9", () -> {
-            this.number = 9;
+        Given("number is (.*)$", (String number) -> {
+            this.number = Integer.valueOf(number);
         });
 
-        Given("number is 7", () -> {
-            this.number = 7;
+        Given("number is (.*)$", (String number) -> {
+            this.number = Integer.valueOf(number);
         });
-*/
+
         When("I ask number is divisible", () -> {
             NumberChecker numberChecker = new NumberChecker();
             this.answer = numberChecker.checkIfDivisible(this.number);
@@ -34,7 +34,6 @@ public class IsItDivisibleSteps implements En {
         Then("I should be told {string}", (String string) -> {
             Assert.assertEquals(string, this.answer);
         });
-
 
     }
 }
