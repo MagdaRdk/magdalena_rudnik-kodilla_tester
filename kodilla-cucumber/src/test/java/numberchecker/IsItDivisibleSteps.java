@@ -9,9 +9,7 @@ public class IsItDivisibleSteps implements En {
     private String answer;
 
     public IsItDivisibleSteps() {
-        Given("^number is (.*)$",  (String number) -> {
-            this.number = Integer.valueOf(number);
-        });
+        Given("^number is (.*)$",  (String number) -> this.number = Integer.parseInt(number));
 
         When("I ask number is divisible", () -> {
             NumberChecker numberChecker = new NumberChecker();
@@ -19,9 +17,7 @@ public class IsItDivisibleSteps implements En {
 
         });
 
-        Then("I should be told {string}", (String string) -> {
-            Assert.assertEquals(string, this.answer);
-        });
+        Then("I should be told {string}", (String string) -> Assert.assertEquals(string, this.answer));
 
     }
 }

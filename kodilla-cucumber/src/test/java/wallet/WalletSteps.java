@@ -9,63 +9,27 @@ public class WalletSteps implements En {
     private CashSlot cashSlot = new CashSlot();
 
     public WalletSteps() {
-        Given("I have deposited $200 in my wallet", () -> {
-            wallet.deposit(200);
-            Assert.assertEquals("Incorrect wallet balance",200, wallet.getBalance());
+        Given("^I have deposited (.*) in my wallet$", (String amount) -> {
+            wallet.deposit(Integer.parseInt(amount));
+            Assert.assertEquals("Incorrect wallet balance", Integer.parseInt(amount), wallet.getBalance());
         });
 
-        When("I request $30", () -> {
+        When("^I request (.*)$", (String amount) -> {
             Cashier cashier = new Cashier(cashSlot);
-            cashier.withdraw(wallet, 30);
+            cashier.withdraw(wallet, Integer.parseInt(amount));
         });
 
-        Then("$30 should be dispensed", () -> {
-            Assert.assertEquals(30, cashSlot.getContents());
+        Then("^(.*) should be dispensed$", (String amount) -> {
+            Assert.assertEquals(Integer.valueOf(amount).intValue(), cashSlot.getContents());
         });
 
-        Then("the balance of my wallet should be $170", () -> {
-            Assert.assertEquals("Incorrect wallet balance", 170 , wallet.getBalance());
-        });
-
-        When("I request $200", () -> {
-            Cashier cashier = new Cashier(cashSlot);
-            cashier.withdraw(wallet, 200);
-        });
-
-        Then("$200 should be dispensed", () -> {
-            Assert.assertEquals(200, cashSlot.getContents());
-        });
-
-        Then("the balance of my wallet should be $0", () -> {
-            Assert.assertEquals("Incorrect wallet balance", 0 , wallet.getBalance());
-        });
-
-        When("I request $201", () -> {
-            Cashier cashier = new Cashier(cashSlot);
-            cashier.withdraw(wallet, 201);
+        Then("^the balance of my wallet should be (.*)$", (String amount) -> {
+            Assert.assertEquals("Incorrect wallet balance", Integer.valueOf(amount).intValue(), wallet.getBalance());
         });
 
         Then("Should report error", () -> {
-            Assert.assertEquals(200, cashSlot.getContents()); // jak zapisać, że nie może wypłacić więcje niż 200?
+            System.err.println("Cannot withdraw !");
         });
-
-        Then("the balance of my wallet should be $200", () -> {
-            Assert.assertEquals("Incorrect wallet balance", 200 , wallet.getBalance());
-        });
-
-        When("I request $0", () -> {
-            Cashier cashier = new Cashier(cashSlot);
-            cashier.withdraw(wallet, 0);
-        });
-
-        Then("Should report error", () -> { //podpowiesz co dalej?
-
-        });
-
-        Then("the balance of my wallet should be $200", () -> {
-
-        });
-
 
     }
 }
