@@ -8,6 +8,7 @@ public class WalletSteps implements En {
     Wallet wallet = new Wallet();
     private CashSlot cashSlot = new CashSlot();
 
+
     public WalletSteps() {
         Given("^I have deposited (.*) in my wallet$", (String amount) -> {
             wallet.deposit(Integer.parseInt(amount));
