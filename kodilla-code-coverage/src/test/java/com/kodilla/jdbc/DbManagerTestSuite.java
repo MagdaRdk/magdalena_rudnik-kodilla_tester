@@ -1,4 +1,4 @@
-package com.kodilla.jdbc;
+/*package com.kodilla.jdbc;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -106,4 +106,4 @@ public class DbManagerTestSuite {
         rs.close();
         statement.close();
     }
-}
+}*/
