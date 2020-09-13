@@ -14,7 +14,7 @@ import java.util.List;
 @SpringBootTest
 public class TaskListRepositoryTestSuite {
 
-    @Autowired
+  @Autowired
     private TaskListRepository taskListRepository;
 
     private static final String DESCRIPTION = "Test: Learn Hibernate";
@@ -27,7 +27,7 @@ public class TaskListRepositoryTestSuite {
         int description = taskList.getId();
 
         //When
-        List<TaskList> readTasksList = taskListRepository.findByListName(String listName);// nie wiem jaki tu wpisać parametr
+        List<TaskList> readTasksList = taskListRepository.findByListName(DESCRIPTION);
 
         //Then
         Assert.assertEquals(1, readTasksList.size());
